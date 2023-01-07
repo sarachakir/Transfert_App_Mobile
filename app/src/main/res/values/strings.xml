@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Ensa_Transfert</string>
+    <string name="NomComplet">Sara Chakir</string>
+    <string name="ribnum">" FR7630006000011234567890187 En savoir plus : https://www.moneyvox.fr/banque/rib-iban-bic.php"</string>
+    <string name="balance">Balance</string>
+    <string name="balancevalue">3000dhs</string>
+    <string name="transactions">Transactions</string>
+    <string name="nbTransaction">10</string>
+    <string name="rib">RIB</string>
+    <string name="img_profile_desc">img</string>
+    <string name="ribn">1232224454332769899</string>
+    <string name="login">Login</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="todo">TODO</string>
+    <string name="Transactions">Transactions</string>
+    <string name="todo1">TODO</string>
+    <string name="enter_transfer_amount">Enter Transfer Amount</string>
+    <string name="amount">Amount :</string>
+    <string name="motif">Motif :</string>
+    <string name="choose_a_benificiary">Choose a Benificiary</string>
+    <string name="notification_du_transfert">Notification du transfert</string>
+    <string name="enter_motif">Enter Motif</string>
+    <string name="cost">cost</string>
+    <string name="next">Next</string>
+    <string name="motif1">Motif :</string>
+    <string name="choose_a_benificiary1">Choose a Benificiary</string>
+    <string name="amount1">Amount :</string>
+    <string name="cost1">cost</string>
+    <string name="exit1">Next</string>
+    <string name="enter_transfer_amount1">Enter Transfer Amount</string>
+    <string name="enter_motif1">Enter Motif</string>
+    <string name="notification_du_transfert1">Notification du transfert</string>
+    <string name="todo2">TODO</string>
+    <string name="benef">Add New Beneficiary</string>
+    <string name="firstname">First Name</string>
+    <string name="lasttname">Last Name</string>
+    <string name="tel">Phone</string>
+    <string name="Save">Save</string>
+    <string-array name="costChoice">
+        <item>Select Your Cost Choice</item>
+        <item>Frais à la charge du client d’donneur d’ordre</item>
+        <item>Frais à la charge du client bénéficiaire</item>
+        <item>Frais partagés entre les deux</item>
+    </string-array>
+</resources>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.activities.MainActivity"
+        tools:ignore="MissingClass">
+
+        <View
+            android:id="@+id/viewHeader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="88dp"
+            android:layout_marginRight="88dp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/layoutProfile"
+            android:layout_width="368dp"
+            android:layout_height="380dp"
+            android:layout_marginTop="88dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewHeader">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="295dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp"
+                tools:layout_marginRight="0dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="284dp"
+                    android:layout_height="390dp">
+
+                    <TextView
+                        android:id="@+id/textAbout"
+                        android:layout_width="277dp"
+                        android:layout_height="46dp"
+                        android:gravity="center"
+                        android:text="@string/NomComplet"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#A1887F"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/Ribnum"
+                        android:layout_width="275dp"
+                        android:layout_height="39dp"
+                        android:layout_marginBottom="68dp"
+                        android:gravity="center"
+                        android:text="@string/ribn"
+                        android:textAllCaps="true"
+                        android:textColor="@color/label_grey"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints,TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/numberModules"
+                        android:layout_width="140dp"
+                        android:layout_height="46dp"
+                        android:layout_marginStart="4dp"
+                        android:gravity="center"
+                        android:text="@string/balance"
+                        android:textColor="@color/purple_700"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textAbout" />
+
+                    <TextView
+                        android:id="@+id/numberModules2"
+                        android:layout_width="138dp"
+                        android:layout_height="46dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:text="@string/balancevalue"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/label_grey"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/Rib"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/numberModules"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/numberFiles"
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="@string/transactions"
+                        android:textColor="@color/purple_700"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textAbout"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/numberFiles2"
+                        android:layout_width="137dp"
+                        android:layout_height="49dp"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:text="@string/nbTransaction"
+                        android:textColor="@color/label_grey"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.111"
+                        app:layout_constraintStart_toEndOf="@+id/numberModules2"
+                        app:layout_constraintTop_toBottomOf="@+id/numberFiles"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/Rib"
+                        android:layout_width="273dp"
+                        android:layout_height="35dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:text="@string/rib"
+                        android:textColor="@color/purple_700"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/Ribnum"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="TextContrastCheck" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="104dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/profile_image_bgd_shape"
+                        android:contentDescription="@string/img_profile_desc"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profile_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:riv_oval="true"
+                        tools:ignore="UnknownId" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/LinearLayout0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom"
+        android:orientation="vertical" >
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:labelVisibilityMode="labeled"
+            android:foregroundGravity="bottom"
+            app:menu="@menu/navmenu" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

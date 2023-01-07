@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransactionActivity">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="-659dp"
+
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/title_select_beneficiaire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="48dp"
+            android:layout_marginTop="24dp"
+            android:background="#F8F690"
+            android:padding="10dp"
+            android:text="@string/choose_a_benificiary1"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
+            android:paddingTop="15sp"
+            android:gravity="center"
+
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amount1"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_transfer_amount1"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck"
+                android:autofillHints="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
+            android:paddingTop="15sp"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/motif1"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/motif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_motif1"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck,TextContrastCheck"
+                android:autofillHints="" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/LinearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:minHeight="48dp"
+                android:text="@string/notification_du_transfert1"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/LinearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Spinner
+                android:id="@+id/action_bar_spinnerCost"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cost1"
+                android:entries="@array/costChoice"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="5dp"
+                android:spinnerMode="dropdown"
+                android:textColorHint="@color/white"
+                android:theme="@style/SpinnerAgain" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/next1"
+                android:layout_width="158dp"
+                android:layout_height="wrap_content"
+                android:background="#F8F690"
+                android:padding="10dp"
+                android:text="@string/exit1"
+                android:textAlignment="center"
+                android:textSize="14sp"
+
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/LinearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical" >
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="#F8F690"
+                android:src="@drawable/ic_baseline_group_add_24"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:contentDescription="@string/todo2" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
