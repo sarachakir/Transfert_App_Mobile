@@ -9,7 +9,7 @@ import retrofit2.http.POST;
 public interface GetDataService {
 
     @FormUrlEncoded
-    @POST("")
+    @POST("/auth/realms/test/protocol/openid-connect/token")
     Call<AccessToken> getAccessToken(
             @Field("client_id") String client_id,
             @Field("grant_type") String grant_type,
