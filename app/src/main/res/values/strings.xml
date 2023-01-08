@@ -37,6 +37,13 @@
     <string name="lasttname">Last Name</string>
     <string name="tel">Phone</string>
     <string name="Save">Save</string>
+    <string name="phone">Phone</string>
+    <string name="enter_otp_received">Enter OTP received :</string>
+    <string name="verify_otp">Verify Otp</string>
+    <string name="validate_transaction">Validate Transaction</string>
+    <string name="verifyotp1">Verify Otp</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="enter_otp_received1">Enter OTP received :</string>
     <string-array name="costChoice">
         <item>Select Your Cost Choice</item>
         <item>Frais à la charge du client d’donneur d’ordre</item>

@@ -5,10 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddBenefActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="52dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="260dp"
         android:layout_height="46dp"
+        android:layout_below="@id/toolbar"
         android:text="@string/benef"
         android:textAlignment="center"
         android:textColor="@color/main_green"
@@ -19,14 +27,14 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.194"
+        app:layout_constraintVertical_bias="0.243"
         tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/fname"
         android:layout_width="292dp"
         android:layout_height="53dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="16dp"
         android:autofillHints=""
         android:backgroundTint="@color/black"
@@ -41,15 +49,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_title"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="DuplicateIds,UnknownId,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/lastname"
+        android:id="@+id/lname"
         android:layout_width="292dp"
         android:layout_height="53dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
         android:autofillHints=""
         android:backgroundTint="@color/black"
         android:ellipsize="start"
@@ -59,48 +67,50 @@
         android:inputType="textPersonName"
         android:textColorHint="@color/main_grey"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/telephone"
+        app:layout_constraintBottom_toTopOf="@+id/lastname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_title"
-        tools:ignore="UnknownId,TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/fname"
+        tools:ignore="DuplicateIds,UnknownId,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/telephone"
+        android:id="@+id/tel"
         android:layout_width="292dp"
         android:layout_height="53dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="16dp"
         android:autofillHints=""
         android:backgroundTint="@color/black"
         android:ellipsize="start"
         android:ems="10"
         android:gravity="center_horizontal"
-        android:hint="@string/tel"
+        android:hint="@string/phone"
         android:inputType="textPersonName"
         android:textColorHint="@color/main_grey"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/customer_login"
+        app:layout_constraintBottom_toTopOf="@+id/lastname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_title"
-        tools:ignore="UnknownId,TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/lname"
+        tools:ignore="DuplicateIds,UnknownId,TextContrastCheck" />
 
     <Button
         android:id="@+id/customer_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/user_login_PAC"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="172dp"
         android:background="@drawable/login_page_buttons"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:text="@string/Save"
         android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,UnknownId,UnknownIdInLayout"
-        tools:layout_editor_absoluteY="433dp" />
+        tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,UnknownIdInLayout,TextContrastCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

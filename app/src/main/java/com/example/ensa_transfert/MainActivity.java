@@ -19,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
-   private  Button button;
+   private  Button button ;
     BottomNavigationView bottomNavigationView;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -33,30 +33,27 @@ public class MainActivity extends AppCompatActivity {
                 openHomeActivity();
             }
         });
-
-         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+/*
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-                        openHomeActivity();
+                        openHomeActivity() ;
                         return true;
                     case R.id.navigation_transfer:
-                        openTransactionActivity();
                         return true;
                     case R.id.navigation_history:
-                        openHistoryActivity();
                         return true;
 
                 }
                 return false;
             }
         });
-
+*/
     }
-
 
     public void openHomeActivity(){
         Intent intent=new Intent(this , HomeActivity.class);

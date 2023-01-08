@@ -6,14 +6,20 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     tools:context=".HomeActivity">
-
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorBackground"
         android:fitsSystemWindows="true"
         tools:context=".ui.activities.MainActivity"
-        tools:ignore="MissingClass">
+        tools:ignore="MissingClass"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="-659dp"
+        android:orientation="vertical">
 
         <View
             android:id="@+id/viewHeader"
@@ -30,7 +36,7 @@
             android:id="@+id/layoutProfile"
             android:layout_width="368dp"
             android:layout_height="380dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
@@ -178,8 +184,6 @@
 
 
         </FrameLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:id="@+id/LinearLayout0"
