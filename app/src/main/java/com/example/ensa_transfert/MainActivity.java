@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //getAccessToken();
+                getAccessToken();
                 //??????
-                openHomeActivity();
+                //openHomeActivity();
             }
         });
 /*
@@ -83,15 +83,17 @@ public class MainActivity extends AppCompatActivity {
         String password=etpassword.getText().toString();
         String username=etusername.getText().toString();
 
-        Call<AccessToken> call=service.getAccessToken("login","password","sdsddsdsddsdds","openid",username,password);
+        Call<AccessToken> call=service.getAccessToken("Agent_Console_pfs","password","6XqupjgH41FCVYbV5AGz4rOopo0XyNxK","openid",username,password);
         call.enqueue(new Callback<AccessToken>() {
             @Override
             public void onResponse(Call<AccessToken> call, Response<AccessToken> response) {
                 if (response.isSuccessful()){
+                    System.out.println("Yeeeees");
                     //AccessToken accessToken=response.body();
                     Intent intent=new Intent(MainActivity.this,HomeActivity.class);
                     MainActivity.this.startActivity(intent);
                 }else{
+                    System.out.println("Noooo");
                     Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
                 }
             }
