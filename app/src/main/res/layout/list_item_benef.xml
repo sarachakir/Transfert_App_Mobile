@@ -1,33 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_block"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    android:background="@drawable/item_bg_shape"
+    android:elevation="7dp"
+    android:gravity="center"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp">
+
     <TextView
         android:id="@+id/NameB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="YASSMIN KARDAD"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
+        android:text="YASSMIN KARDAD"
         android:textColor="@color/black"
         android:textSize="17dp"
         android:textStyle="bold" />
 
 
     <TextView
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:id="@+id/number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="028888888888888888888"
         android:layout_below="@id/NameB"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="028888888888888888888"
         android:textSize="15sp"
         android:textStyle="bold" />
-
-
-
-
 
 
 </RelativeLayout>

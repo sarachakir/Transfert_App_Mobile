@@ -12,6 +12,7 @@ import com.example.ensa_transfert.Models.Client;
 import com.example.ensa_transfert.Models.Enumerators.IdentityPaperType;
 import com.example.ensa_transfert.Retrofit.BeneficiaryAPI;
 import com.example.ensa_transfert.Retrofit.RetrofitService;
+import com.google.gson.Gson;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,7 +35,6 @@ public class AddBenefActivity extends AppCompatActivity {
 
         RetrofitService retrofitService = new RetrofitService();
         BeneficiaryAPI beneficiaryAPI = retrofitService.getRetrofit().create(BeneficiaryAPI.class);
-        //ClientAPI clientAPI = retrofitService.getRetrofit().create(ClientAPI.class);
 
         // On va pour le moment faire avec un client statique
         Client client = new Client(
@@ -70,10 +70,10 @@ public class AddBenefActivity extends AppCompatActivity {
             String phone = phoneNumber.getText().toString();
 
             Beneficiary beneficiary = new Beneficiary(
-                    0,
                     fname,
                     lname,
-                    phone
+                    phone,
+                    client
             );
 
             String cin = client.getCinNumber();

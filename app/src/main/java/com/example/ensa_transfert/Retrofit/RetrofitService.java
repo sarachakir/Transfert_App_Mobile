@@ -1,7 +1,9 @@
 package com.example.ensa_transfert.Retrofit;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -9,7 +11,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitService {
 
     private Retrofit retrofit;
-    private String baseApiUrl = "http://192.168.1.127:4200";
+    private String baseApiUrl = "http://192.168.43.151:4200";
+    public Gson gson = new GsonBuilder()
+            .setLenient()
+            .create();
+    OkHttpClient client = new OkHttpClient();
 
     public RetrofitService(){
         initializeRetrofit();
@@ -18,7 +24,8 @@ public class RetrofitService {
     private void initializeRetrofit() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(baseApiUrl)
-                .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                .client(client)
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
     }
 

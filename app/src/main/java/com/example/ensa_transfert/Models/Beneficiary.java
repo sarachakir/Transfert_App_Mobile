@@ -1,27 +1,47 @@
 package com.example.ensa_transfert.Models;
 
-public class Beneficiary {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    private  Integer id;
+import androidx.annotation.NonNull;
+
+import com.google.gson.annotations.SerializedName;
+
+public class Beneficiary implements Parcelable {
+
+    @SerializedName("firstName")
     private String firstName;
+    @SerializedName("lastName")
     private String lastName;
+    @SerializedName("phoneNumber")
     private String phoneNumber;
+    public Client client;
 
 
-    public Beneficiary(Integer id, String firstName, String lastName, String phoneNumber) {
-        this.id = id;
+    public Beneficiary(String firstName, String lastName, String phoneNumber, Client client) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
+        this.client = client;
     }
 
-    public Integer getId() {
-        return id;
+    protected Beneficiary(Parcel in) {
+        firstName = in.readString();
+        lastName = in.readString();
+        phoneNumber = in.readString();
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public static final Creator<Beneficiary> CREATOR = new Creator<Beneficiary>() {
+        @Override
+        public Beneficiary createFromParcel(Parcel in) {
+            return new Beneficiary(in);
+        }
+
+        @Override
+        public Beneficiary[] newArray(int size) {
+            return new Beneficiary[size];
+        }
+    };
 
     public String getFirstName() {
         return firstName;
@@ -50,10 +70,21 @@ public class Beneficiary {
     @Override
     public String toString() {
         return "Beneficiary{" +
-                "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(firstName);
+        dest.writeString(lastName);
+        dest.writeString(phoneNumber);
     }
 }
