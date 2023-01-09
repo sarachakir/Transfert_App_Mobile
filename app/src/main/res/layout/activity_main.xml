@@ -75,7 +75,7 @@
         android:textColor="#fff"
         android:textColorHint="#37474F"
         android:textCursorDrawable="@drawable/blinking_cursor_colour"
-        app:layout_constraintBottom_toTopOf="@+id/customer_login"
+        app:layout_constraintBottom_toTopOf="@+id/saveBenef"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_sib"
@@ -83,7 +83,7 @@
         tools:ignore="MissingConstraints,TextContrastCheck" />
 
     <Button
-        android:id="@+id/customer_login"
+        android:id="@+id/saveBenef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

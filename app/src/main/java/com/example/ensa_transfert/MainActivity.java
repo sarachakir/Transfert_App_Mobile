@@ -1,17 +1,10 @@
 package com.example.ensa_transfert;
 
-import static android.content.ContentValues.TAG;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +14,6 @@ import com.example.ensa_transfert.Keycloak.AccessToken;
 import com.example.ensa_transfert.Keycloak.GetDataService;
 import com.example.ensa_transfert.Keycloak.RetrofitClientInstance;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         etpassword=findViewById(R.id.user_login_registrationNo2);
         etusername=findViewById(R.id.user_login_registrationNo);
-        button=findViewById(R.id.customer_login);
+        button=findViewById(R.id.saveBenef);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

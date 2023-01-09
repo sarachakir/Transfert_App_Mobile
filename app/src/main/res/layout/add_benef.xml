@@ -97,7 +97,7 @@
         tools:ignore="DuplicateIds,UnknownId,TextContrastCheck" />
 
     <Button
-        android:id="@+id/customer_login"
+        android:id="@+id/saveBenef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
