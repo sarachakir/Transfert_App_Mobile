@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.ensa_transfert.Models.Beneficiary;
 import com.example.ensa_transfert.Models.Client;
@@ -53,12 +54,42 @@ public class HomeActivity extends AppCompatActivity {
     RetrofitService retrofitService = new RetrofitService();
     ClientAPI clientAPI = retrofitService.getRetrofit().create(ClientAPI.class);
     List<Transfert> results;
+    Client connectedclient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        TextView name=findViewById(R.id.textAbout);
+        TextView balance  = findViewById(R.id.numberModules2);
+        TextView transaction =findViewById(R.id.numberFiles2);
+        TextView rip =findViewById(R.id.Ribnum);
+
+        String username=getIntent().getStringExtra("username");
+        System.out.println("---------------------------------------------------");
+        System.out.println(username);
+        System.out.println("---------------------------------------------------");
+        clientAPI.getClientByUsername(username)
+                .enqueue(new Callback<Client>() {
+                    @Override
+                    public void onResponse(Call<Client> call, Response<Client> response) {
+                        connectedclient = response.body();
+                        System.out.println(connectedclient);
+                        name.setText(connectedclient.getFirstName()+" "+connectedclient.getLastName());
+                        balance.setText((int) connectedclient.getAccounts().get(0).getBalance());
+                        transaction.setText(connectedclient.getAccounts().size());
+                        rip.setText(connectedclient.getCinNumber());
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Client> call, Throwable t) {
+
+                    }
+                });
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
 
             @Override
@@ -81,6 +112,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void openHomeActivity(){
         Intent intent=new Intent(this , HomeActivity.class);
+        intent.putExtra("username",connectedclient.getUserName());
         startActivity(intent);
     }
     public void openTransactionActivity(){

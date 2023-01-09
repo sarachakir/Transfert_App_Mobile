@@ -1,7 +1,5 @@
 package com.example.ensa_transfert.Models;
 
-import android.accounts.Account;
-
 import com.example.ensa_transfert.Models.Enumerators.IdentityPaperType;
 
 import java.util.List;

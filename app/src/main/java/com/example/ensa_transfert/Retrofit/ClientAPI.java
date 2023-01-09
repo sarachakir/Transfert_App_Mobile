@@ -23,4 +23,7 @@ public interface ClientAPI {
     @POST("/api/v0/client_transfer_service_api/client/transfer")
     Call<Resource> createMultitransfer(@Body MTransfert mTransfert);
 
+    @GET("/api/v0/client_service_api/clients/{username}")
+    Call<Client> getClientByUsername(@Path("username") String username);
+
 }

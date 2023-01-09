@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitService {
 
     private Retrofit retrofit;
-    private String baseApiUrl = "http://192.168.43.151:4200";
+    private String baseApiUrl = "https://client-service-01.herokuapp.com";
     public Gson gson = new GsonBuilder()
             .setLenient()
             .create();

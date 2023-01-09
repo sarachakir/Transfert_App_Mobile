@@ -65,8 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openHomeActivity(){
-        Intent intent=new Intent(this , HomeActivity.class);
-        startActivity(intent);
+
     }
     public void openTransactionActivity(){
         Intent intent=new Intent(this , TransactionActivity.class);
@@ -90,8 +89,10 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     System.out.println("Yeeeees");
                     //AccessToken accessToken=response.body();
-                    Intent intent=new Intent(MainActivity.this,HomeActivity.class);
-                    MainActivity.this.startActivity(intent);
+                    Intent intent=new Intent(getApplicationContext() , HomeActivity.class);
+                    String username=etusername.getText().toString();
+                    intent.putExtra("username",username);
+                    startActivity(intent);
                 }else{
                     System.out.println("Noooo");
                     Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
