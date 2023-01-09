@@ -6,8 +6,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.ensa_transfert.Models.ActivitiesModels.BenefItem;
 import com.example.ensa_transfert.Models.Beneficiary;
 import com.example.ensa_transfert.R;
 

@@ -2,9 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/item_bg_shape"
     >
     <TextView
-        android:id="@+id/AmountT"
+        android:id="@+id/date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="01/12/2022"
@@ -13,6 +14,7 @@
         android:textColor="@color/black"
         android:textSize="17dp"
         android:textStyle="bold" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,12 +25,13 @@
 
         android:paddingTop="15sp"
         android:gravity="center"
-        android:layout_below="@id/AmountT"
+        android:layout_below="@id/date"
 
 
         >
 
         <TextView
+            android:id="@+id/tfullname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="YASSMIN KARDAD"
@@ -38,7 +41,7 @@
         <TextView
 
 
-            android:id="@+id/Date"
+            android:id="@+id/lamount"
             android:layout_width="match_parent"
             android:gravity="right"
             android:layout_height="wrap_content"

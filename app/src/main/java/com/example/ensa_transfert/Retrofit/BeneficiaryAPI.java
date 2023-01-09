@@ -13,9 +13,9 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface BeneficiaryAPI {
-    @GET("/api/v0/client_service_api/clients/{cin}/benificiares")
+    @GET("/api/v0/client_transfer_service_api/client/transfer/allBenif/{cin}")
     Call<List<Beneficiary>> getAllBenificariesByClient(@Path("cin") String cin);
 
-    @POST("/api/v0/client_service_api/clients/{cin}/addNewBenif")
+    @POST("/api/v0/client_transfer_service_api/client/transfer/addBenif/{cin}")
     Call<Client> addBenifiToClient(@Body Beneficiary beneficiary, @Path("cin") String cin);
 }

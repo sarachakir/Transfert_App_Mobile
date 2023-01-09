@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.example.ensa_transfert.Adapters.ListBenefAdapter;
-import com.example.ensa_transfert.Models.ActivitiesModels.BenefItem;
 import com.example.ensa_transfert.Models.Beneficiary;
 import com.example.ensa_transfert.Models.Client;
 import com.example.ensa_transfert.Models.Enumerators.IdentityPaperType;
