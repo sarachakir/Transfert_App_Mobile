@@ -3,8 +3,10 @@ package com.example.ensa_transfert;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ensa_transfert.Models.Beneficiary;
@@ -27,6 +29,9 @@ public class AddBenefActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_benef);
+        View inflatedView = getLayoutInflater().inflate(R.layout.toolbar, null);
+        TextView text = (TextView) inflatedView.findViewById(R.id.title1);
+        text.setText("New Benificiary");
 
         initializeComponents();
     }

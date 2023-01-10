@@ -46,8 +46,8 @@
     <string name="enter_otp_received1">Enter OTP received :</string>
     <string-array name="costChoice">
         <item>Select Your Cost Choice</item>
-        <item>Frais à la charge du client d’donneur d’ordre</item>
-        <item>Frais à la charge du client bénéficiaire</item>
-        <item>Frais partagés entre les deux</item>
+        <item> CHARGE_CLIENT_DONNEUR_ORDER</item>
+        <item>CHARGE_BENIFICIAIRE</item>
+        <item>CHARGE_BOTH</item>
     </string-array>
 </resources>

@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 
 import com.example.ensa_transfert.Models.Enumerators.TransferStatus;
 import com.example.ensa_transfert.Models.Enumerators.TransfertType;
+import com.example.ensa_transfert.Models.Enumerators.TypeFrais;
 
 import java.time.LocalDateTime;
 
@@ -28,6 +29,8 @@ public class Transfert implements Parcelable {
     private TransferStatus status;
 
     private TransfertType type;
+
+    private TypeFrais typeFrais;
     //private String motif;
 
     private String receiverFirstName; // beneficiary first  name
@@ -38,6 +41,13 @@ public class Transfert implements Parcelable {
 
     private MTransfert mTransfer;
 
+    public TypeFrais getTypeFrais() {
+        return typeFrais;
+    }
+
+    public void setTypeFrais(TypeFrais typeFrais) {
+        this.typeFrais = typeFrais;
+    }
 
     public Transfert(LocalDateTime receivedAt, String transferReference, String codePin, double transferAmount, double transferCost, double finalAmountOperation, double finalAmountTransfer, boolean toBeNotified, TransferStatus status, TransfertType type, String receiverFirstName, String receiverLastName, String receiverPhoneNumber, MTransfert mTransfer) {
         this.receivedAt = receivedAt;

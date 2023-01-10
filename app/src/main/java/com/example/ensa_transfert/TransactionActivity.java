@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.ensa_transfert.Models.Beneficiary;
 import com.example.ensa_transfert.Models.Client;
 import com.example.ensa_transfert.Models.Enumerators.IdentityPaperType;
+import com.example.ensa_transfert.Models.Enumerators.TypeFrais;
 import com.example.ensa_transfert.Models.MTransfert;
 import com.example.ensa_transfert.Models.Transfert;
 import com.example.ensa_transfert.Retrofit.BeneficiaryAPI;
@@ -81,14 +82,14 @@ public class TransactionActivity extends AppCompatActivity {
         setContentView(R.layout.transaction);
 
         b1=findViewById(R.id.add_fab);
-        b2=findViewById(R.id.verifOtp);
+        b2=findViewById(R.id.next1);
         b3 = findViewById(R.id.title_select_beneficiaire);
-        amount = findViewById(R.id.otp);
+        amount = findViewById(R.id.amount);
         motif = findViewById(R.id.motif);
         notif = findViewById(R.id.checkBox);
         spinner = findViewById(R.id.action_bar_spinnerCost);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             mTransfert.setProspect_client(false); // already have an account so cannot be prospect
             mTransfert.setSenderFirstName(connected_user.getFirstName());
             mTransfert.setSenderLastName(connected_user.getLastName());
@@ -138,7 +139,7 @@ public class TransactionActivity extends AppCompatActivity {
 
                             @Override
                             public void onFailure(Call<List<Beneficiary>> call, Throwable t) {
-
+                                    System.out.println("errrrrrrrrr");
                             }
                         });
     }
@@ -149,24 +150,26 @@ public class TransactionActivity extends AppCompatActivity {
             mTransfert.setMotif(motif.getText().toString());
             mTransfert.setTotalAmount(Double.parseDouble(amount.getText().toString()));
             mTransfert.setNotifyBeneficiary(notif.isChecked());
-            /*
-            String selectedSpinner = spinner.getSelectedItem().toString();
-            if(selectedSpinner == "Frais à la charge du client d’donneur d’ordre"){
-                mTransfert.set
 
-            }*/
+            //String selectedSpinner = spinner.getSelectedItem().toString();
+
         }
 
         transfert.setReceiverFirstName(choosen_benef.getFirstName());
         transfert.setReceiverLastName(choosen_benef.getLastName());
         transfert.setReceiverPhoneNumber(choosen_benef.getPhoneNumber());
         transfert.setTransferAmount(Double.parseDouble(amount.getText().toString())); // supposing that for
+        transfert.setTypeFrais(TypeFrais.valueOf(spinner.getSelectedItem().toString()));
         // the moment we can only do one transfert at once
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             mTransfert.setTransfers((List<Transfert>) transfert);
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        Intent intent=new Intent(this , EnterOTPActivity.class);
+        intent.putExtra("connected_user", connected_user);
+        startActivity(intent);
+
+       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             clientAPI.verifyClientBalance(connected_user.getCinNumber(), mTransfert.getTotalAmount())
                             .enqueue(new Callback<String>() {
                                 @Override

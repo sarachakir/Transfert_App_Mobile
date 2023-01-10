@@ -3,10 +3,12 @@ package com.example.ensa_transfert;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.ensa_transfert.Models.Beneficiary;
@@ -66,6 +68,9 @@ public class HomeActivity extends AppCompatActivity {
         TextView balance  = findViewById(R.id.numberModules2);
         TextView transaction =findViewById(R.id.numberFiles2);
         TextView rip =findViewById(R.id.Ribnum);
+        View inflatedView = getLayoutInflater().inflate(R.layout.toolbar, null);
+        TextView text = (TextView) inflatedView.findViewById(R.id.title1);
+        text.setText("Profil Information!");
 
         String username=getIntent().getStringExtra("username");
         System.out.println("---------------------------------------------------");
@@ -117,7 +122,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void openTransactionActivity(){
         Intent intent=new Intent(this , TransactionActivity.class);
-        intent.putExtra("connected_user", connectedclient);
+        //intent.putExtra("connected_user", connectedclient);
         startActivity(intent);
     }
     public void openHistoryActivity(){
