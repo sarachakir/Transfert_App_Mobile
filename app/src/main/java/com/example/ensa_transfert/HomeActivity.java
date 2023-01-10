@@ -117,6 +117,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void openTransactionActivity(){
         Intent intent=new Intent(this , TransactionActivity.class);
+        intent.putExtra("connected_user", connectedclient);
         startActivity(intent);
     }
     public void openHistoryActivity(){

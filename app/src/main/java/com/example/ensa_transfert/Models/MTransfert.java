@@ -1,14 +1,17 @@
 package com.example.ensa_transfert.Models;
 
 import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
-public class MTransfert {
+public class MTransfert implements Parcelable {
 
     private LocalDateTime createdAt = LocalDateTime .now();
     private LocalDateTime  endedAt = createdAt.plusDays(4); //
@@ -61,6 +64,41 @@ public class MTransfert {
     public MTransfert(){
 
     }
+
+    protected MTransfert(Parcel in) {
+        if (in.readByte() == 0) {
+            id_client = null;
+        } else {
+            id_client = in.readInt();
+        }
+        totalAmount = in.readDouble();
+        motif = in.readString();
+        total_expense_amount = in.readDouble();
+        senderFirstName = in.readString();
+        senderLastName = in.readString();
+        senderPhoneNumber = in.readString();
+        prospect_client = in.readByte() != 0;
+        if (in.readByte() == 0) {
+            sentByAgentWithId = null;
+        } else {
+            sentByAgentWithId = in.readInt();
+        }
+        transferByCash = in.readByte() != 0;
+        notifyBeneficiary = in.readByte() != 0;
+        transfers = in.createTypedArrayList(Transfert.CREATOR);
+    }
+
+    public static final Creator<MTransfert> CREATOR = new Creator<MTransfert>() {
+        @Override
+        public MTransfert createFromParcel(Parcel in) {
+            return new MTransfert(in);
+        }
+
+        @Override
+        public MTransfert[] newArray(int size) {
+            return new MTransfert[size];
+        }
+    };
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
@@ -172,6 +210,37 @@ public class MTransfert {
 
     public void setTransfers(List<Transfert> transfers) {
         this.transfers = transfers;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        if (id_client == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(id_client);
+        }
+        dest.writeDouble(totalAmount);
+        dest.writeString(motif);
+        dest.writeDouble(total_expense_amount);
+        dest.writeString(senderFirstName);
+        dest.writeString(senderLastName);
+        dest.writeString(senderPhoneNumber);
+        dest.writeByte((byte) (prospect_client ? 1 : 0));
+        if (sentByAgentWithId == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(sentByAgentWithId);
+        }
+        dest.writeByte((byte) (transferByCash ? 1 : 0));
+        dest.writeByte((byte) (notifyBeneficiary ? 1 : 0));
+        dest.writeTypedList(transfers);
     }
 }
 

@@ -26,4 +26,10 @@ public interface ClientAPI {
     @GET("/api/v0/client_service_api/clients/{username}")
     Call<Client> getClientByUsername(@Path("username") String username);
 
+    @GET("/api/v0/client_transfer_service_api/client/transfer/{cin}/{amountOfTransfer}")
+    Call<String> verifyClientBalance(@Path("cin") String cin, @Path("amountOfTransfer") Double amountOfTransfer);
+
+    @POST("/api/v0/client_transfer_service_api/client/transfer")
+    Call<Resource> createMultitransferAgent(@Body MTransfert mTransfert);
+
 }

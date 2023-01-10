@@ -1,10 +1,15 @@
 package com.example.ensa_transfert.Models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import com.example.ensa_transfert.Models.Enumerators.IdentityPaperType;
 
 import java.util.List;
 
-public class Client {
+public class Client implements Parcelable {
 
     private  Long id;
     private String gender;
@@ -53,6 +58,41 @@ public class Client {
         this.accounts = accounts;
     }
 
+
+    protected Client(Parcel in) {
+        if (in.readByte() == 0) {
+            id = null;
+        } else {
+            id = in.readLong();
+        }
+        gender = in.readString();
+        firstName = in.readString();
+        userName = in.readString();
+        lastName = in.readString();
+        email = in.readString();
+        password = in.readString();
+        birthday = in.readString();
+        cinNumber = in.readString();
+        phoneNumber = in.readString();
+        country = in.readString();
+        zipCode = in.readString();
+        address = in.readString();
+        city = in.readString();
+        maxTransferAmountPerYear = in.readDouble();
+        beneficiaries = in.createTypedArrayList(Beneficiary.CREATOR);
+    }
+
+    public static final Creator<Client> CREATOR = new Creator<Client>() {
+        @Override
+        public Client createFromParcel(Parcel in) {
+            return new Client(in);
+        }
+
+        @Override
+        public Client[] newArray(int size) {
+            return new Client[size];
+        }
+    };
 
     public Long getId() {
         return id;
@@ -220,6 +260,36 @@ public class Client {
                 ", beneficiaries=" + beneficiaries +
                 ", accounts=" + accounts +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        if (id == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeLong(id);
+        }
+        dest.writeString(gender);
+        dest.writeString(firstName);
+        dest.writeString(userName);
+        dest.writeString(lastName);
+        dest.writeString(email);
+        dest.writeString(password);
+        dest.writeString(birthday);
+        dest.writeString(cinNumber);
+        dest.writeString(phoneNumber);
+        dest.writeString(country);
+        dest.writeString(zipCode);
+        dest.writeString(address);
+        dest.writeString(city);
+        dest.writeDouble(maxTransferAmountPerYear);
+        dest.writeTypedList(beneficiaries);
     }
 }
 

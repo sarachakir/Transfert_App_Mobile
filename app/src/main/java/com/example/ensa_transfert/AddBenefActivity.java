@@ -83,12 +83,12 @@ public class AddBenefActivity extends AppCompatActivity {
                     .enqueue(new Callback<Client>() {
                         @Override
                         public void onResponse(Call<Client> call, Response<Client> response) {
-                            Toast.makeText(AddBenefActivity.this, "The beneficiary has been saved !", Toast.LENGTH_LONG);
+                            Toast.makeText(AddBenefActivity.this, "The beneficiary has been saved !", Toast.LENGTH_LONG).show();
                         }
 
                         @Override
                         public void onFailure(Call<Client> call, Throwable t) {
-                            Toast.makeText(AddBenefActivity.this, "The save has failed !", Toast.LENGTH_LONG);
+                            Toast.makeText(AddBenefActivity.this, "The save has failed !", Toast.LENGTH_LONG).show();
                             Logger.getLogger(AddBenefActivity.class.getName()).log(Level.SEVERE, "An error has occured !", t);
                         }
                     });
